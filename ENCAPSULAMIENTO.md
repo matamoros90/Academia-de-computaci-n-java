@@ -138,4 +138,4 @@ Esto garantiza **protección de datos, mantenibilidad y flexibilidad** para futu
 
 ---
 
-**Repositorio GitHub:** _(agregar enlace aquí)_
+**Repositorio GitHub:** [Academia-de-computaci-n-java](https://github.com/matamoros90/Academia-de-computaci-n-java)
