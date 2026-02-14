@@ -1,26 +1,12 @@
-// ============================================================================
-// INSTRUCTOR.java — SUBCLASE que hereda de Persona
-// ============================================================================
-//
-// 📚 Misma lógica que Alumno, pero con atributos diferentes.
-//
-// Esto demuestra el PODER de la herencia:
-// Tanto Alumno como Instructor comparten nombre y edad (de Persona),
-// pero cada uno tiene sus propios datos adicionales:
-//   → Alumno tiene carnet y promedio
-//   → Instructor tiene especialidad
-//
-// Si el ejercicio lo pidiera, podrías tener un ArrayList<Persona>
-// que almacene TANTO alumnos como instructores, porque ambos "son" Persona.
-// Eso se llama POLIMORFISMO (tratar diferentes tipos como si fueran uno).
-// ============================================================================
+// Subclase que hereda de Persona.
+// Agrega atributo propio: especialidad.
 
 public class Instructor extends Persona {
 
-    // Atributo propio de Instructor
+    // Atributo privado propio de Instructor
     private String especialidad;
 
-    // Constructor: inicializa Persona (con super) + especialidad
+    // Constructor: usa super() para inicializar nombre y edad
     public Instructor(String nombre, int edad, String especialidad) {
         super(nombre, edad);
         this.especialidad = especialidad;

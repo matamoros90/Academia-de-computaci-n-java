@@ -1,58 +1,20 @@
-// ============================================================================
-// ALUMNO.java — SUBCLASE que hereda de Persona
-// ============================================================================
-//
-// 📚 CONCEPTO: HERENCIA con "extends"
-//
-// "extends Persona" significa que Alumno HEREDA todo lo de Persona:
-//   → Los atributos (nombre, edad) — aunque son private, se acceden por getters
-//   → Los métodos (getNombre, getEdad, setNombre, setEdad, toString)
-//
-// Alumno agrega sus PROPIOS atributos: carnet y promedio.
-// Así evitamos repetir código. Si mañana necesitamos agregar "teléfono"
-// a todas las personas, solo lo agregamos en Persona y todas las subclases
-// lo heredan automáticamente.
-//
-// 📚 CONCEPTO: "super()"
-// Cuando Alumno tiene un constructor, necesita llamar al constructor de 
-// Persona para inicializar nombre y edad. Esto se hace con super(nombre, edad).
-// "super" = "llama al constructor de mi clase padre"
-// ============================================================================
+// Subclase que hereda de Persona.
+// Agrega atributos propios: carnet y promedio.
 
 public class Alumno extends Persona {
 
-    // -----------------------------------------------------------------------
-    // ATRIBUTOS PROPIOS de Alumno (además de los heredados)
-    // -----------------------------------------------------------------------
-    // Estos son EXCLUSIVOS de Alumno. La clase Persona no los tiene.
-    // También son private (encapsulamiento).
-    // -----------------------------------------------------------------------
+    // Atributos privados propios de Alumno
     private String carnet;
     private double promedio;
 
-    // -----------------------------------------------------------------------
-    // CONSTRUCTOR de Alumno
-    // -----------------------------------------------------------------------
-    // Recibe TODO: nombre, edad (para Persona) + carnet, promedio (para Alumno)
-    //
-    // Ejemplo de uso:
-    // Alumno a = new Alumno("Carlos", 19, "2024-001", 85.5);
-    //
-    // Lo que sucede internamente:
-    // 1. super("Carlos", 19) → llama al constructor de Persona
-    // → Persona guarda nombre="Carlos" y edad=19
-    // 2. this.carnet = "2024-001" → Alumno guarda su propio carnet
-    // 3. this.promedio = 85.5 → Alumno guarda su propio promedio
-    // -----------------------------------------------------------------------
+    // Constructor: usa super() para inicializar nombre y edad de Persona
     public Alumno(String nombre, int edad, String carnet, double promedio) {
-        super(nombre, edad); // ← Llama al constructor de Persona
+        super(nombre, edad);
         this.carnet = carnet;
         this.promedio = promedio;
     }
 
-    // -----------------------------------------------------------------------
-    // GETTERS y SETTERS propios de Alumno
-    // -----------------------------------------------------------------------
+    // Getters y Setters
     public String getCarnet() {
         return carnet;
     }
@@ -69,15 +31,7 @@ public class Alumno extends Persona {
         this.promedio = promedio;
     }
 
-    // -----------------------------------------------------------------------
-    // toString() — Sobreescribimos el de Persona
-    // -----------------------------------------------------------------------
-    // @Override indica que estamos REEMPLAZANDO el toString() de Persona.
-    // Usamos super.toString() para reutilizar lo que ya hace Persona
-    // y le agregamos nuestros datos propios.
-    //
-    // Resultado: "Nombre: Carlos, Edad: 19, Carnet: 2024-001, Promedio: 85.5"
-    // -----------------------------------------------------------------------
+    // toString sobreescrito: reutiliza el de Persona con super.toString()
     @Override
     public String toString() {
         return super.toString() + ", Carnet: " + carnet + ", Promedio: " + promedio;
